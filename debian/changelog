@@ -1,5 +1,69 @@
-template-repository (1.0-1) unstable; urgency=medium
+dockerpty (0.4.1-5) unstable; urgency=medium
 
-  * Initial release
+  * Team Upload
+  * add patch to remove dependency on python3-six
+  * use new dh-sequence-python3
+  * set "Rules-Requires-Root: no"
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Alexandre Detiste <tchet@debian.org>  Sun, 07 Jan 2024 06:12:53 +0100
+
+dockerpty (0.4.1-4) unstable; urgency=medium
+
+  * Remove constraints unnecessary since buster:
+    + Build-Depends: Drop versioned constraint on python3-all.
+    + python3-dockerpty: Drop versioned constraint on python3-docker in
+      Recommends.
+
+ -- Debian Janitor <janitor@jelmer.uk>  Thu, 26 May 2022 20:01:11 +0100
+
+dockerpty (0.4.1-3) unstable; urgency=low
+
+  [ Debian Janitor ]
+  * Bump debhelper from deprecated 9 to 12.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+  [ Ondřej Nový ]
+  * d/control: Update Maintainer field with new Debian Python Team
+    contact address.
+  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout.
+
+  [ Debian Janitor ]
+  * Bump debhelper from old 12 to 13.
+
+ -- Sandro Tosi <morph@debian.org>  Mon, 25 Apr 2022 21:13:47 -0400
+
+dockerpty (0.4.1-2) unstable; urgency=medium
+
+  * Team upload.
+  * d/control: Set Vcs-* to salsa.debian.org
+  * d/copyright: Use https protocol in Format field
+  * d/watch: Use https protocol
+  * d/control: Remove ancient X-Python-Version field
+  * d/control: Remove ancient X-Python3-Version field
+  * Convert git repository from git-dpm to gbp layout
+  * Use debhelper-compat instead of debian/compat.
+  * Drop Python 2 support.
+
+ -- Ondřej Nový <onovy@debian.org>  Thu, 25 Jul 2019 15:50:51 +0200
+
+dockerpty (0.4.1-1) unstable; urgency=medium
+
+  * New upstream release
+  * Update Vcs-Git to use https transport
+  * Bump Standards-Version to 3.9.7, no changes needed
+
+ -- Jason Pleau <jason@jpleau.ca>  Thu, 25 Feb 2016 09:01:21 -0500
+
+dockerpty (0.3.4-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jason Pleau <jason@jpleau.ca>  Fri, 12 Jun 2015 15:47:36 -0400
+
+dockerpty (0.3.3-1) unstable; urgency=medium
+
+  * Initial release (Closes: #781054)
+
+ -- Jason Pleau <jason@jpleau.ca>  Mon, 18 May 2015 19:57:05 -0400
