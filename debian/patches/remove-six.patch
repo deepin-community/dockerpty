@@ -1,0 +1,55 @@
+From: Alexandre Detiste <tchet@debian.org>
+Forwarded: no, project is dead
+
+--- a/dockerpty.egg-info/requires.txt
++++ b/dockerpty.egg-info/requires.txt
+@@ -1 +0,0 @@
+-six >= 1.3.0
+--- a/dockerpty/io.py
++++ b/dockerpty/io.py
+@@ -19,7 +19,6 @@
+ import errno
+ import struct
+ import select as builtin_select
+-import six
+ 
+ 
+ def set_blocking(fd, blocking=True):
+@@ -60,7 +59,7 @@
+         )[0:2]
+     except builtin_select.error as e:
+         # POSIX signals interrupt select()
+-        no = e.errno if six.PY3 else e[0]
++        no = e.errno
+         if no == errno.EINTR:
+             return ([], [])
+         else:
+@@ -237,7 +236,7 @@
+         if size <= 0:
+             return
+         else:
+-            data = six.binary_type()
++            data = b''
+             while len(data) < size:
+                 nxt = self.stream.read(size - len(data))
+                 if not nxt:
+@@ -287,7 +286,7 @@
+             size = min(n, self.remain)
+             self.remain -= size
+         else:
+-            data = six.binary_type()
++            data = b''
+             while len(data) < 8:
+                 nxt = self.stream.read(8 - len(data))
+                 if not nxt:
+--- a/setup.py
++++ b/setup.py
+@@ -33,7 +33,7 @@
+     url='https://github.com/d11wtq/dockerpty',
+     author='Chris Corbyn',
+     author_email='chris@w3style.co.uk',
+-    install_requires=['six >= 1.3.0'],
++    install_requires=[],
+     license='Apache 2.0',
+     keywords='docker, tty, pty, terminal',
+     packages=['dockerpty'],

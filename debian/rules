@@ -1,4 +1,7 @@
 #!/usr/bin/make -f
 
+export PYBUILD_NAME=dockerpty
+export PYBUILD_DISABLE=test
+
 %:
-	dh $@
+	dh $@ --buildsystem=pybuild
